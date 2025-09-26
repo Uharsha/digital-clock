@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*h1,h2,h3{
+            margin-left: 600px;
+        }*/
+        body{
+            background-image: url('https://img.freepik.com/free-photo/bright-petals-gift-love-bouquet-generated-by-ai_188544-13370.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        #time{
+            text-align: center;
+            margin-top: 20%;
+            font-size: 100px;
+            color: cyan;
+            margin:0%;
+            text-shadow: 2px 2px 5px black;
+        }
+        #day{
+            text-align: center;
+            font-style: italic;
+            font-size: 80px;
+            margin: 0%;
+            color: lightgreen;
+            text-shadow: 2px 2px 5px black;  
+        }
+        #date{
+             text-align: center;
+            font-style: italic;
+            font-size: 80px;
+            margin:0%;
+            color: rgb(255, 230, 0);
+            text-shadow: 2px 2px 5px black;  
+        }
+        #group{
+            margin-top: 16%;
+        }
+    </style>
+</head>
+<body>
+    <div id="group">
+    <h1 id="time">00:00:00</h1>
+    <h2 id="day">day</h2>
+    <h3 id="date">date</h3>
+    </div>
+    <script>
+        function time (){
+        let date= new Date();
+        let hours=date.getHours();
+        let minute=date.getMinutes();
+        let seconds=date.getSeconds();
+        let dates=date.getDate();
+        let month=date.getMonth()+1;
+        let year=date.getFullYear();
+        let day = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Sartuday",]
+        if(hours < 10) hours= "0" + hours;
+        if(minute <10) minute= "0" + minute;
+        if (seconds < 10) seconds= "0" + seconds;
+        let d=dates < 10 ? "0" + dates : dates;
+        let m=month < 10 ? "0" + month : month;
+        let y=year < 10 ? "0" + year : year;
+        document.getElementById("date").innerHTML=d +"/" + m + "/" + y;
+        document.getElementById("time").innerHTML= hours + ":" + minute + ":" + seconds;
+        setInterval(time,1000);
+        document.getElementById("day").innerHTML=day[date.getDay()];
+        localStorage.setItem("name", "harsha vardhan")
+        localStorage.getItem("name")
+        localStorage.saveitem("name")
+        localStorage.removeItem("time")
+        };
+        time()
+
+    </script>
+</body>
+</html>
